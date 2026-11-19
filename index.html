@@ -1,0 +1,1839 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Panduan Doa Umrah</title>
+  <meta name="description" content="Aplikasi panduan doa umrah lengkap dari keberangkatan hingga tahallul dengan bacaan Arab, latin, arti, pengingat harian, dan penghitung putaran thawaf & sa'i." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f7f5f0;
+      --surface: #ffffff;
+      --surface-soft: #f3f0e8;
+      --border: #e5e0d5;
+      --text: #14221d;
+      --muted: #5c6b64;
+      --accent: #0e5a45;
+      --accent-soft: #e7f3ee;
+      --gold: #a37e2c;
+      --gold-bg: #f8f1dd;
+      --gold-border: #dfd3b2;
+      --danger: #9e3324;
+      --hero-bg: #0e4a39;
+      --nav-bg: rgba(247, 245, 240, 0.92);
+      --bottom-bg: rgba(255, 255, 255, 0.95);
+    }
+
+    :root.dark {
+      --bg: #0c1310;
+      --surface: #141e1a;
+      --surface-soft: #1b2923;
+      --border: #24342e;
+      --text: #eff3f0;
+      --muted: #96a89f;
+      --accent: #247a61;
+      --accent-soft: #17362b;
+      --gold: #d9b664;
+      --gold-bg: #2c2512;
+      --gold-border: #3d351e;
+      --danger: #e5917d;
+      --hero-bg: #113d30;
+      --nav-bg: rgba(12, 19, 16, 0.92);
+      --bottom-bg: rgba(16, 25, 21, 0.95);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+      line-height: 1.5;
+      transition: background-color 180ms ease, color 180ms ease;
+    }
+
+    button, input {
+      font: inherit;
+      color: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      border: 0;
+      background: transparent;
+    }
+
+    button:focus-visible, input:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+    .hidden { display: none !important; }
+    .tabular { font-variant-numeric: tabular-nums; }
+    .font-arabic { font-family: "Amiri", "Traditional Arabic", serif; }
+    .ico-sm { width: 18px; height: 18px; flex-shrink: 0; }
+    .ico-md { width: 20px; height: 20px; flex-shrink: 0; }
+    .ico-lg { width: 24px; height: 24px; flex-shrink: 0; }
+    .ico-accent { color: var(--accent); }
+
+    /* Header */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      height: 56px;
+      border-bottom: 1px solid var(--border);
+      background: var(--nav-bg);
+      backdrop-filter: blur(10px);
+    }
+
+    .topbar-inner {
+      max-width: 1120px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .topbar-left { display: flex; align-items: center; gap: 10px; }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 17px;
+      white-space: nowrap;
+    }
+
+    .brand-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #fff;
+      display: grid;
+      place-items: center;
+    }
+
+    .btn-back-mobile {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      min-height: 44px;
+      padding: 0 8px 0 0;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .nav-desktop { display: none; align-items: center; gap: 28px; }
+
+    .nav-link {
+      position: relative;
+      padding: 8px 0;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .nav-link:hover, .nav-link.active { color: var(--accent); }
+
+    .nav-link.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -14px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .fav-count { color: var(--gold); font-size: 12px; }
+
+    .btn-settings {
+      min-height: 40px;
+      padding: 8px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 20px 16px 96px;
+    }
+
+    .stack-lg { display: flex; flex-direction: column; gap: 26px; }
+    .stack-md { display: flex; flex-direction: column; gap: 18px; }
+
+    /* Reminder Banner & Card */
+    .reminder-banner {
+      border-radius: 20px;
+      background: var(--hero-bg);
+      border: 1px solid #1a6b54;
+      color: #fff;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .reminder-banner-left {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .reminder-banner-ico {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.14);
+      color: #f2dda2;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .reminder-banner-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .btn-gold {
+      min-height: 40px;
+      padding: 8px 16px;
+      border-radius: 12px;
+      background: #e8ca7a;
+      color: #14221d;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .btn-ghost-white {
+      min-width: 40px;
+      min-height: 40px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      display: grid;
+      place-items: center;
+    }
+
+    .reminder-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 20px;
+    }
+
+    .reminder-main {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .reminder-info {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .reminder-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .reminder-config {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .time-input {
+      min-height: 44px;
+      padding: 8px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--surface-soft);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .time-input:disabled { opacity: 0.45; }
+
+    .btn-outline {
+      min-height: 44px;
+      padding: 8px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .btn-outline.active-soft {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-gold-soft {
+      min-height: 44px;
+      padding: 8px 14px;
+      border-radius: 12px;
+      background: var(--gold-bg);
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    /* Hero Split */
+    .hero-split {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      background: var(--hero-bg);
+      color: #fff;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 220px;
+    }
+
+    .hero-pattern {
+      position: absolute;
+      top: -32px;
+      right: -32px;
+      width: 240px;
+      height: 240px;
+      color: #f0dca0;
+      opacity: 0.09;
+      pointer-events: none;
+    }
+
+    .hero-ar {
+      font-size: 26px;
+      color: #f2dda2;
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
+
+    .hero-title {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-sub {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.82);
+      margin-top: 6px;
+      max-width: 420px;
+    }
+
+    .hero-progress {
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .progress-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .progress-row span:last-child { color: #f2dda2; }
+
+    .progress-bar {
+      height: 8px;
+      border-radius: 99px;
+      background: rgba(255, 255, 255, 0.2);
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: 99px;
+      background: #e8ca7a;
+      transition: width 300ms ease;
+    }
+
+    /* Right Column Home */
+    .hero-side { display: flex; flex-direction: column; gap: 14px; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 18px;
+    }
+
+    .resume-card {
+      flex: 1;
+      text-align: left;
+      border-radius: 24px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .resume-card:hover { border-color: var(--accent); }
+
+    .resume-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .kicker { font-size: 12px; font-weight: 600; color: var(--accent); }
+    .resume-title { font-size: 20px; font-weight: 700; margin-top: 4px; }
+
+    .resume-desc {
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 6px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .resume-foot {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .quick-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    .quick-btn {
+      min-height: 72px;
+      padding: 14px;
+      border-radius: 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+    }
+
+    .quick-btn:hover { border-color: var(--accent); }
+
+    .icon-tile {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--surface-soft);
+      color: var(--accent);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .icon-tile.gold { color: var(--gold); }
+    .icon-tile.gold-filled { background: var(--gold-bg); color: var(--gold); }
+    .quick-title { font-size: 14px; font-weight: 700; display: block; }
+    .quick-sub { font-size: 12px; color: var(--muted); display: block; }
+
+    /* Section Headers & Grids */
+    .sec-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 14px;
+    }
+
+    .sec-title { font-size: 19px; font-weight: 700; }
+    .sec-meta { font-size: 12px; color: var(--muted); font-weight: 500; }
+    .sec-link { font-size: 13px; font-weight: 600; color: var(--accent); }
+
+    .grid-cards { display: grid; grid-template-columns: 1fr; gap: 12px; }
+
+    .stage-card {
+      min-height: 82px;
+      padding: 16px;
+      border-radius: 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-align: left;
+    }
+
+    .stage-card:hover { border-color: var(--accent); }
+    .stage-card.done .icon-tile { background: var(--accent); color: #fff; }
+    .stage-body { flex: 1; min-width: 0; }
+    .stage-meta { font-size: 12px; color: var(--muted); font-weight: 500; }
+    .stage-meta strong { color: var(--gold); }
+    .stage-name { font-size: 16px; font-weight: 700; margin-top: 2px; }
+    .stage-sub { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    /* List & Search */
+    .list-header { display: flex; flex-direction: column; gap: 14px; }
+    .page-title { font-size: 24px; font-weight: 800; letter-spacing: -0.02em; }
+    .page-sub { font-size: 14px; color: var(--muted); margin-top: 4px; }
+    .search-wrap { position: relative; width: 100%; }
+
+    .search-wrap svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      pointer-events: none;
+    }
+
+    .search-input {
+      width: 100%;
+      min-height: 44px;
+      padding: 10px 14px 10px 42px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      font-size: 14px;
+    }
+
+    .filter-tabs { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; }
+
+    .filter-btn {
+      min-height: 40px;
+      padding: 8px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    .prayer-row {
+      min-height: 74px;
+      padding: 8px 8px 8px 14px;
+      border-radius: 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .prayer-row:hover { border-color: var(--accent); }
+
+    .prayer-row-main {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-align: left;
+      padding: 6px 0;
+    }
+
+    .num-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: var(--surface-soft);
+      font-size: 14px;
+      font-weight: 700;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .num-badge.done { background: var(--accent); color: #fff; }
+
+    .fav-toggle {
+      min-width: 44px;
+      min-height: 44px;
+      border-radius: 12px;
+      color: var(--muted);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .fav-toggle.active { background: var(--gold-bg); color: var(--gold); }
+
+    /* Detail View */
+    .detail-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      padding-bottom: 64px;
+    }
+
+    .detail-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .detail-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .pill-btn {
+      min-height: 40px;
+      padding: 8px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pill-btn.active-gold { background: var(--gold-bg); border-color: var(--gold); color: var(--gold); }
+    .pill-btn.active-green { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    .arabic-card {
+      position: relative;
+      border-radius: 24px;
+      background: var(--surface);
+      border: 1px solid var(--gold-border);
+      padding: 34px 20px;
+    }
+
+    .arabic-text { direction: rtl; text-align: center; line-height: 2.2; }
+    .read-label { font-size: 12px; font-weight: 700; color: var(--accent); margin-bottom: 6px; }
+    .read-label.gold { color: var(--gold); }
+    .latin-text { font-size: 17px; font-weight: 600; line-height: 1.6; }
+    .meaning-text { font-size: 16px; color: var(--muted); line-height: 1.65; }
+
+    .note-card {
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .detail-nav-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 30;
+      padding: 12px 16px;
+      background: var(--nav-bg);
+      border-top: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    .detail-nav-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .btn-nav-primary, .btn-nav-secondary {
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .btn-nav-secondary { background: var(--surface); border: 1px solid var(--border); }
+    .btn-nav-primary { background: var(--accent); color: #fff; }
+    .btn-nav-primary:disabled, .btn-nav-secondary:disabled { opacity: 0.4; pointer-events: none; }
+
+    /* Counter */
+    .counter-wrap { max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+
+    .segmented-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      padding: 5px;
+      border-radius: 14px;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+    }
+
+    .segmented-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      padding: 6px;
+      border-radius: 14px;
+      background: var(--surface-soft);
+    }
+
+    .seg-btn {
+      min-height: 38px;
+      padding: 6px 8px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .seg-btn.active { background: var(--surface); color: var(--accent); }
+
+    .counter-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .ring-btn {
+      position: relative;
+      width: 204px;
+      height: 204px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+    }
+
+    .ring-btn svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+    .ring-center { position: absolute; display: flex; flex-direction: column; align-items: center; }
+    .ring-num { font-size: 48px; font-weight: 800; line-height: 1; }
+    .ring-sub { font-size: 12px; font-weight: 600; color: var(--muted); margin-top: 6px; }
+
+    .counter-controls {
+      width: 100%;
+      max-width: 360px;
+      display: flex;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .ctrl-sq {
+      min-width: 52px;
+      min-height: 52px;
+      border-radius: 14px;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .ctrl-main {
+      flex: 1;
+      min-height: 52px;
+      border-radius: 14px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .ctrl-main:disabled, .ctrl-sq:disabled { opacity: 0.45; pointer-events: none; }
+
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 40;
+      height: 62px;
+      border-top: 1px solid var(--border);
+      background: var(--bottom-bg);
+      backdrop-filter: blur(10px);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .bottom-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .bottom-btn.active { color: var(--accent); font-weight: 700; }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .modal-sheet {
+      width: 100%;
+      max-width: 440px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px 24px 0 0;
+      padding: 20px 24px 28px;
+    }
+
+    .modal-handle { width: 40px; height: 4px; border-radius: 99px; background: var(--border); margin: 0 auto 12px; }
+    .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+    .modal-header h2 { font-size: 18px; font-weight: 700; }
+
+    .icon-btn {
+      min-width: 44px;
+      min-height: 44px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+    }
+
+    .modal-body { display: flex; flex-direction: column; gap: 18px; }
+    .setting-label { font-size: 12px; font-weight: 600; color: var(--muted); margin-bottom: 8px; }
+    .setting-row-head { display: flex; justify-content: space-between; align-items: center; }
+    .setting-value { font-size: 12px; font-weight: 700; color: var(--accent); }
+
+    .font-stepper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--surface-soft);
+    }
+
+    .step-btn {
+      min-width: 44px;
+      min-height: 44px;
+      border-radius: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .font-preview {
+      flex: 1;
+      text-align: center;
+      font-family: "Amiri", serif;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .check-row {
+      width: 100%;
+      min-height: 48px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .check-box {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      display: grid;
+      place-items: center;
+      color: transparent;
+      font-size: 13px;
+    }
+
+    .check-row.checked .check-box { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .reset-btn { width: 100%; min-height: 44px; border-radius: 12px; font-size: 13px; font-weight: 600; color: var(--danger); }
+    .empty-state { text-align: center; padding: 40px 24px; }
+    .footer-disc { text-align: center; font-size: 13px; color: var(--muted); max-width: 560px; margin: 8px auto 0; }
+
+    @media (min-width: 640px) {
+      .reminder-banner { flex-direction: row; align-items: center; justify-content: space-between; }
+    }
+
+    @media (min-width: 768px) {
+      .topbar { height: 64px; }
+      .nav-desktop { display: flex; }
+      .bottom-nav { display: none; }
+      .btn-back-mobile { display: none !important; }
+      .container { padding: 32px 24px 48px; }
+      .reminder-main { flex-direction: row; align-items: center; justify-content: space-between; }
+      .reminder-config { grid-template-columns: repeat(3, 1fr); }
+      .grid-cards { grid-template-columns: repeat(2, 1fr); }
+      .list-header { flex-direction: row; justify-content: space-between; align-items: flex-end; }
+      .search-wrap { width: 320px; }
+      .detail-wrap { padding-bottom: 16px; }
+      .detail-nav-bar { position: static; background: transparent; border-top: 0; padding: 0; backdrop-filter: none; }
+      .modal-backdrop { align-items: center; }
+      .modal-sheet { border-radius: 20px; }
+      .modal-handle { display: none; }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-split { grid-template-columns: 7fr 5fr; }
+      .grid-cards.cols-3 { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <button type="button" id="btnBackHeader" class="btn-back-mobile hidden" aria-label="Kembali">
+          <svg viewBox="0 0 24 24" class="ico-sm" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          <span>Kembali</span>
+        </button>
+
+        <button type="button" id="btnHomeBrand" class="brand">
+          <span class="brand-badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="ico-sm" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3L4 7.2v9.6L12 21l8-4.2V7.2L12 3z" />
+              <path d="M4 7.2L12 11.4l8-4.2" />
+              <path d="M12 11.4V21" />
+              <path d="M4 10.6l8 4.2 8-4.2" stroke-opacity="0.6" />
+            </svg>
+          </span>
+          <span>Doa Umrah</span>
+        </button>
+      </div>
+
+      <nav class="nav-desktop" aria-label="Navigasi utama">
+        <button type="button" class="nav-link active" data-tab="home">Beranda</button>
+        <button type="button" class="nav-link" data-tab="prayers">Daftar Doa</button>
+        <button type="button" class="nav-link" data-tab="counter">Hitungan</button>
+        <button type="button" class="nav-link" data-tab="favorites">
+          Favorit <span id="headerFavBadge" class="fav-count"></span>
+        </button>
+      </nav>
+
+      <div>
+        <button type="button" id="btnOpenSettings" class="btn-settings" aria-label="Pengaturan tampilan bacaan">
+          <svg viewBox="0 0 24 24" class="ico-sm ico-accent" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>
+          <span>Tampilan</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="app" class="container"></main>
+
+  <nav id="bottomNav" class="bottom-nav" aria-label="Menu bawah">
+    <button type="button" class="bottom-btn active" data-tab="home">
+      <svg viewBox="0 0 24 24" class="ico-md" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+      <span>Beranda</span>
+    </button>
+    <button type="button" class="bottom-btn" data-tab="prayers">
+      <svg viewBox="0 0 24 24" class="ico-md" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      <span>Daftar Doa</span>
+    </button>
+    <button type="button" class="bottom-btn" data-tab="counter">
+      <svg viewBox="0 0 24 24" class="ico-md" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="6.5" stroke-dasharray="0.1 4.2" stroke-width="2.6"/><path d="M12 16.5v4.5"/><path d="M10.2 19.5l1.8 1.5 1.8-1.5"/></svg>
+      <span>Hitungan</span>
+    </button>
+    <button type="button" class="bottom-btn" data-tab="favorites">
+      <svg viewBox="0 0 24 24" class="ico-md" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+      <span>Favorit</span>
+    </button>
+  </nav>
+
+  <div id="settingsModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+    <div class="modal-sheet">
+      <div class="modal-handle"></div>
+      <div class="modal-header">
+        <h2 id="settingsTitle">Tampilan Bacaan</h2>
+        <button type="button" id="btnCloseModal" class="icon-btn" aria-label="Tutup pengaturan">
+          <svg viewBox="0 0 24 24" class="ico-md" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div>
+          <p class="setting-label">Tema Warna</p>
+          <div class="segmented-2">
+            <button type="button" id="btnThemeLight" class="seg-btn">Terang</button>
+            <button type="button" id="btnThemeDark" class="seg-btn">Gelap</button>
+          </div>
+        </div>
+
+        <div>
+          <div class="setting-row-head">
+            <p class="setting-label">Ukuran Huruf Arab</p>
+            <span id="fontSizeLabel" class="setting-value">32px</span>
+          </div>
+          <div class="font-stepper">
+            <button type="button" id="btnFontMinus" class="step-btn" aria-label="Perkecil huruf Arab">−</button>
+            <div id="fontPreview" class="font-preview" dir="rtl" lang="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+            <button type="button" id="btnFontPlus" class="step-btn" aria-label="Perbesar huruf Arab">+</button>
+          </div>
+        </div>
+
+        <div>
+          <p class="setting-label">Komponen Bacaan</p>
+          <button type="button" id="btnToggleLatin" class="check-row">
+            <span>Tampilkan Bacaan Latin</span>
+            <span class="check-box" aria-hidden="true">✓</span>
+          </button>
+          <button type="button" id="btnToggleMeaning" class="check-row">
+            <span>Tampilkan Arti Terjemahan</span>
+            <span class="check-box" aria-hidden="true">✓</span>
+          </button>
+        </div>
+
+        <div id="resetArea"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const STAGES = [
+      { id: "berangkat", name: "Berangkat", short: "Berangkat", sub: "Keluar rumah hingga naik kendaraan", order: 1 },
+      { id: "ihram", name: "Ihram", short: "Ihram", sub: "Niat ihram di miqat & talbiyah", order: 2 },
+      { id: "mekkah", name: "Tiba di Mekkah", short: "Mekkah", sub: "Masuk tanah haram & melihat Ka’bah", order: 3 },
+      { id: "thawaf", name: "Thawaf", short: "Thawaf", sub: "7 putaran mengelilingi Ka’bah", order: 4 },
+      { id: "sai", name: "Sa’i", short: "Sa’i", sub: "7 lintasan antara Safa dan Marwah", order: 5 },
+      { id: "tahallul", name: "Tahallul", short: "Tahallul", sub: "Mencukur rambut & penutup umrah", order: 6 }
+    ];
+
+    const PRAYERS = [
+      { id: 0, stageId: "berangkat", stage: "Berangkat", title: "Keluar rumah", arabic: "بِسْمِ اللَّهِ تَوَكَّلْتُ عَلَى اللَّهِ، لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ", latin: "Bismillāhi tawakkaltu ‘alallāh, lā ḥawla wa lā quwwata illā billāh.", meaning: "Dengan nama Allah, aku bertawakal kepada Allah. Tiada daya dan kekuatan kecuali dengan pertolongan Allah.", note: "" },
+      { id: 1, stageId: "berangkat", stage: "Berangkat", title: "Naik kendaraan", arabic: "سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ وَإِنَّا إِلَى رَبِّنَا لَمُنْقَلِبُونَ", latin: "Subḥānalladzī sakhkhara lanā hādzā wa mā kunnā lahū muqrinīn, wa innā ilā rabbinā lamunqalibūn.", meaning: "Maha Suci Allah yang menundukkan kendaraan ini bagi kami, padahal kami tidak mampu menguasainya. Dan sesungguhnya kepada Tuhan kami, kami akan kembali.", note: "Dibaca juga saat naik pesawat terbang atau bus menuju Tanah Suci." },
+      { id: 2, stageId: "ihram", stage: "Ihram", title: "Niat ihram umrah", arabic: "لَبَّيْكَ اللَّهُمَّ عُمْرَةً", latin: "Labbaika Allāhumma ‘umratan.", meaning: "Aku penuhi panggilan-Mu ya Allah untuk berumrah.", note: "Dibaca di miqat setelah mandi sunnah dan berpakaian ihram." },
+      { id: 3, stageId: "ihram", stage: "Ihram", title: "Talbiyah", arabic: "لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ، لَبَّيْكَ لَا شَرِيكَ لَكَ لَبَّيْكَ، إِنَّ الْحَمْدَ وَالنِّعْمَةَ لَكَ وَالْمُلْكَ، لَا شَرِيكَ لَكَ", latin: "Labbaik Allāhumma labbaik, labbaika lā syarīka laka labbaik, innal ḥamda wan ni‘mata laka wal mulk, lā syarīka lak.", meaning: "Aku penuhi panggilan-Mu ya Allah. Tiada sekutu bagi-Mu. Sesungguhnya segala puji, nikmat, dan kerajaan adalah milik-Mu.", note: "Disunnahkan diperbanyak sepanjang perjalanan sampai memulai thawaf." },
+      { id: 4, stageId: "mekkah", stage: "Tiba di Mekkah", title: "Memasuki kota Mekkah", arabic: "اللَّهُمَّ هَذَا حَرَمُكَ وَأَمْنُكَ فَحَرِّمْ لَحْمِي وَدَمِي عَلَى النَّارِ وَآمِنِّي مِنْ عَذَابِكَ يَوْمَ تَبْعَثُ عِبَادَكَ", latin: "Allāhumma hādzā ḥaramuka wa amnuka faḥarrim laḥmī wa damī ‘alan nār, wa āminnī min ‘adzābika yauma tab‘atsu ‘ibādak.", meaning: "Ya Allah, ini tanah haram dan tempat aman-Mu. Haramkanlah dagingku dan darahku dari api neraka, dan amankan aku dari azab-Mu pada hari Engkau bangkitkan hamba-hamba-Mu.", note: "" },
+      { id: 5, stageId: "mekkah", stage: "Tiba di Mekkah", title: "Masuk Masjidil Haram", arabic: "بِسْمِ اللَّهِ وَالصَّلَاةُ وَالسَّلَامُ عَلَى رَسُولِ اللَّهِ، اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ", latin: "Bismillāhi waṣ-ṣalātu was-salāmu ‘alā rasūlillāh, Allāhummaftaḥ lī abwāba raḥmatik.", meaning: "Dengan nama Allah, shalawat dan salam atas Rasulullah. Ya Allah, bukakanlah pintu-pintu rahmat-Mu untukku.", note: "Melangkah masuk masjid dengan mendahulukan kaki kanan." },
+      { id: 6, stageId: "mekkah", stage: "Tiba di Mekkah", title: "Pertama melihat Ka’bah", arabic: "اللَّهُمَّ زِدْ هَذَا الْبَيْتَ تَشْرِيفًا وَتَعْظِيمًا وَتَكْرِيمًا وَمَهَابَةً", latin: "Allāhumma zid hādzal baita tasyrīfan wa ta‘ẓīman wa takrīman wa mahābah.", meaning: "Ya Allah, tambahkanlah kemuliaan, keagungan, kehormatan, dan wibawa pada rumah ini.", note: "Angkat tangan dan berdoa sesuka hati; momen melihat Ka’bah termasuk waktu mustajab." },
+      { id: 7, stageId: "thawaf", stage: "Thawaf", title: "Istilam Hajar Aswad", arabic: "بِسْمِ اللَّهِ وَاللَّهُ أَكْبَرُ", latin: "Bismillāhi wallāhu akbar.", meaning: "Dengan nama Allah, Allah Maha Besar.", note: "Dibaca sambil menghadap dan memberi isyarat ke Hajar Aswad di awal setiap putaran." },
+      { id: 8, stageId: "thawaf", stage: "Thawaf", title: "Antara Rukun Yamani & Hajar Aswad", arabic: "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ", latin: "Rabbanā ātinā fid-dunyā ḥasanah, wa fil-ākhirati ḥasanah, wa qinā ‘adzāban-nār.", meaning: "Ya Tuhan kami, berilah kami kebaikan di dunia dan kebaikan di akhirat, dan lindungilah kami dari azab neraka.", note: "Diulang pada setiap putaran. Di bagian lain thawaf, bebas membaca dzikir atau doa pribadi." },
+      { id: 9, stageId: "thawaf", stage: "Thawaf", title: "Di belakang Maqam Ibrahim", arabic: "وَاتَّخِذُوا مِنْ مَقَامِ إِبْرَاهِيمَ مُصَلًّى", latin: "Wattakhidzū min maqāmi Ibrāhīma muṣallā.", meaning: "Dan jadikanlah sebagian maqam Ibrahim sebagai tempat shalat.", note: "Setelah 7 putaran thawaf, laksanakan shalat sunnah dua rakaat." },
+      { id: 10, stageId: "thawaf", stage: "Thawaf", title: "Minum air zamzam", arabic: "اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا وَرِزْقًا وَاسِعًا وَشِفَاءً مِنْ كُلِّ دَاءٍ", latin: "Allāhumma innī as’aluka ‘ilman nāfi‘ā, wa rizqan wāsi‘ā, wa syifā’an min kulli dā’.", meaning: "Ya Allah, aku memohon kepada-Mu ilmu yang bermanfaat, rezeki yang luas, dan kesembuhan dari segala penyakit.", note: "Dianjurkan minum menghadap Ka’bah." },
+      { id: 11, stageId: "sai", stage: "Sa’i", title: "Mendekati bukit Safa", arabic: "إِنَّ الصَّفَا وَالْمَرْوَةَ مِنْ شَعَائِرِ اللَّهِ", latin: "Innaṣ-ṣafā wal-marwata min sya‘ā’irillāh.", meaning: "Sesungguhnya Safa dan Marwah adalah sebagian dari syiar Allah.", note: "Naik ke bukit Safa, menghadap Ka’bah, bertakbir lalu berdoa." },
+      { id: 12, stageId: "sai", stage: "Sa’i", title: "Berjalan antara Safa & Marwah", arabic: "رَبِّ اغْفِرْ وَارْحَمْ إِنَّكَ أَنْتَ الْأَعَزُّ الْأَكْرَمُ", latin: "Rabbigfir warḥam innaka antal a‘azzul akram.", meaning: "Ya Tuhanku, ampunilah dan rahmatilah, sesungguhnya Engkau Maha Perkasa lagi Maha Mulia.", note: "Tujuh lintasan: Safa ke Marwah (1), Marwah ke Safa (2), berakhir di Marwah pada lintasan ke-7." },
+      { id: 13, stageId: "tahallul", stage: "Tahallul", title: "Selesai umrah & tahallul", arabic: "اللَّهُمَّ تَقَبَّلْ مِنَّا إِنَّكَ أَنْتَ السَّمِيعُ الْعَلِيمُ", latin: "Allāhumma taqabbal minnā innaka antas-samī‘ul ‘alīm.", meaning: "Ya Allah, terimalah amal kami, sesungguhnya Engkau Maha Mendengar lagi Maha Mengetahui.", note: "Cukur atau potong rambut, lalu rangkaian ihram umrah selesai." }
+    ];
+
+    const load = (k, d) => {
+      try { const v = localStorage.getItem(k); return v !== null ? JSON.parse(v) : d; }
+      catch { return d; }
+    };
+    const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
+
+    const state = {
+      tab: "home",
+      stage: "all",
+      prayerId: null,
+      counterMode: "thawaf",
+      query: "",
+      confirmReset: false,
+      reminderConfigOpen: false,
+      testBannerActive: false,
+      done: load("bdone", {}),
+      fav: load("bfav", {}),
+      reviewedDates: load("umrah_reviewed_dates", []),
+      reminder: Object.assign(
+        { enabled: true, time: "06:00", focus: "favorite", dismissedDate: null, lastNotifiedDate: null },
+        load("umrah_reminder", {})
+      ),
+      notifPerm: typeof window !== "undefined" && "Notification" in window ? Notification.permission : "unsupported",
+      theme: load("umrah_theme", matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"),
+      arabicSize: load("bfs", 32),
+      showLatin: load("umrah_latin", true),
+      showMeaning: load("umrah_meaning", true),
+      counts: {
+        thawaf: Number(localStorage.getItem("umrah_thawaf") || 0),
+        sai: Number(localStorage.getItem("umrah_sai") || 0),
+        tasbih: Number(localStorage.getItem("umrah_tasbih") || 0)
+      }
+    };
+
+    const getTodayKey = (d = new Date()) =>
+      `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+
+    const getCurrentHHMM = (d = new Date()) =>
+      `${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`;
+
+    const getDayOfYear = (d = new Date()) =>
+      Math.floor((d - new Date(d.getFullYear(), 0, 0)) / 86400000);
+
+    function calculateStreak(dates) {
+      if (!dates.length) return 0;
+      const set = new Set(dates);
+      const cursor = new Date();
+      if (!set.has(getTodayKey(cursor))) {
+        cursor.setDate(cursor.getDate() - 1);
+        if (!set.has(getTodayKey(cursor))) return 0;
+      }
+      let streak = 0;
+      while (set.has(getTodayKey(cursor))) {
+        streak++;
+        cursor.setDate(cursor.getDate() - 1);
+      }
+      return streak;
+    }
+
+    function pickDailyReviewPrayer() {
+      const idx = getDayOfYear();
+      if (state.reminder.focus === "next") {
+        return PRAYERS.find((p) => !state.done[p.id]) || PRAYERS[idx % PRAYERS.length];
+      }
+      if (state.reminder.focus === "favorite") {
+        const favs = PRAYERS.filter((p) => state.fav[p.id]);
+        if (favs.length) return favs[idx % favs.length];
+      }
+      return PRAYERS[idx % PRAYERS.length];
+    }
+
+    function isReminderDue() {
+      const today = getTodayKey();
+      return (
+        state.reminder.enabled &&
+        !state.reviewedDates.includes(today) &&
+        state.reminder.dismissedDate !== today &&
+        getCurrentHHMM() >= state.reminder.time
+      );
+    }
+
+    function markReviewedToday() {
+      const today = getTodayKey();
+      if (!state.reviewedDates.includes(today)) {
+        state.reviewedDates = [...state.reviewedDates.slice(-60), today];
+        save("umrah_reviewed_dates", state.reviewedDates);
+      }
+      state.testBannerActive = false;
+    }
+
+    function maybeFireBrowserNotification() {
+      const today = getTodayKey();
+      if (
+        isReminderDue() &&
+        state.notifPerm === "granted" &&
+        state.reminder.lastNotifiedDate !== today &&
+        "Notification" in window
+      ) {
+        const p = pickDailyReviewPrayer();
+        try {
+          new Notification("Waktunya Baca Doa Umrah", {
+            body: `Tinjau kembali: ${p.title} (${p.stage})`
+          });
+        } catch {}
+        state.reminder.lastNotifiedDate = today;
+        save("umrah_reminder", state.reminder);
+      }
+    }
+
+    function stageSvg(id) {
+      const map = {
+        berangkat: '<path d="M4 20h16"/><path d="M6 20V10a6 6 0 0 1 12 0v10"/><path d="M12 10v6"/><path d="M9.5 12.5 12 10l2.5 2.5"/>',
+        ihram: '<path d="M15.5 4.5a6.5 6.5 0 1 0 4 11.5 5.2 5.2 0 1 1-4-11.5z"/>',
+        mekkah: '<path d="M12 3v2"/><path d="M12 5c-3 2-4.5 4.2-4.5 6.5h9C16.5 9.2 15 7 12 5z"/><path d="M4 9v11"/><path d="M20 9v11"/><path d="M3 11.5h18V20H3z"/><path d="M10 20v-4a2 2 0 0 1 4 0v4"/>',
+        thawaf: '<rect x="8.5" y="8.5" width="7" height="7" rx="1"/><path d="M8.5 11h7"/><path d="M12 3.5A8.5 8.5 0 1 1 4.2 15.4"/><path d="M10.5 5.2 12 3.5l1.8 1.5"/>',
+        sai: '<path d="M2.5 18.5l4.2-6.5 3.3 4.2 2.2-2.2 3.3 4.5"/><path d="M14.2 15.5l3.3-4.5 4 7.5"/><path d="M2 18.5h20"/><path d="M7.5 6.5h9"/><path d="m14.5 4.5 2 2-2 2"/>',
+        tahallul: '<circle cx="7" cy="17" r="2.5"/><circle cx="17" cy="17" r="2.5"/><path d="M8.8 15.2 17 5"/><path d="M15.2 15.2 7 5"/>'
+      };
+      return `<svg viewBox="0 0 24 24" class="ico-lg" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${map[id] || ""}</svg>`;
+    }
+
+    const bookmarkSvg = (filled) =>
+      `<svg viewBox="0 0 24 24" class="ico-md" fill="${filled ? "currentColor" : "none"}" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>`;
+
+    const bellSvg = '<svg viewBox="0 0 24 24" class="ico-md" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>';
+    const chevronSvg = '<svg viewBox="0 0 24 24" class="ico-md" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>';
+
+    function applyTheme() {
+      document.documentElement.classList.toggle("dark", state.theme === "dark");
+      save("umrah_theme", state.theme);
+    }
+
+    function updateChrome() {
+      const inDetail = state.prayerId !== null;
+      document.getElementById("btnBackHeader").classList.toggle("hidden", !inDetail);
+      document.getElementById("btnHomeBrand").classList.toggle("hidden", inDetail && window.innerWidth < 768);
+      document.getElementById("bottomNav").classList.toggle("hidden", inDetail);
+
+      const favCount = PRAYERS.filter((p) => state.fav[p.id]).length;
+      document.getElementById("headerFavBadge").textContent = favCount ? `(${favCount})` : "";
+
+      document.querySelectorAll(".nav-link, .bottom-btn").forEach((el) => {
+        el.classList.toggle("active", !inDetail && el.dataset.tab === state.tab);
+      });
+    }
+
+    function renderReminderSection() {
+      const reviewPrayer = pickDailyReviewPrayer();
+      const reviewedToday = state.reviewedDates.includes(getTodayKey());
+      const streak = calculateStreak(state.reviewedDates);
+      const showAlert = state.testBannerActive || isReminderDue();
+      const focusOpts = [
+        { id: "favorite", label: "Doa Favorit" },
+        { id: "next", label: "Urutan Bacaan" },
+        { id: "daily", label: "Rotasi Harian" }
+      ];
+
+      return `
+        <section>
+          ${showAlert ? `
+            <div class="reminder-banner" role="status">
+              <div class="reminder-banner-left">
+                <span class="reminder-banner-ico">${bellSvg}</span>
+                <div style="min-width:0">
+                  <p style="font-size:12px;font-weight:600;color:#f2dda2">
+                    ${state.testBannerActive ? "Pratinjau Pengingat Harian" : `Pengingat Harian · ${state.reminder.time}`}
+                  </p>
+                  <p style="font-size:15px;font-weight:700">Waktunya meninjau doa: ${reviewPrayer.title}</p>
+                  <p style="font-size:12px;color:rgba(255,255,255,0.8)">${reviewPrayer.stage} — Luangkan sejenak untuk menjaga hafalan umrah Anda.</p>
+                </div>
+              </div>
+              <div class="reminder-banner-actions">
+                <button type="button" class="btn-gold" data-open-prayer="${reviewPrayer.id}">Baca Sekarang</button>
+                <button type="button" class="btn-ghost-white" data-dismiss-reminder="1" aria-label="Tutup pengingat">✕</button>
+              </div>
+            </div>
+          ` : ""}
+
+          <div class="reminder-card">
+            <div class="reminder-main">
+              <div class="reminder-info">
+                <span class="icon-tile ${reviewedToday ? "" : "gold-filled"}">${bellSvg}</span>
+                <div style="min-width:0">
+                  <p class="stage-meta tabular">
+                    <span style="color:var(--accent);font-weight:600">${reviewedToday ? "Tinjauan hari ini selesai" : "Tinjauan hafalan hari ini"}</span>
+                    · Runtutan ${streak} hari
+                    ${state.reminder.enabled ? `· Jadwal ${state.reminder.time}` : ""}
+                  </p>
+                  <h2 class="stage-name" style="margin-top:4px">${reviewPrayer.title}</h2>
+                  <p class="font-arabic" dir="rtl" lang="ar" style="font-size:18px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${reviewPrayer.arabic}</p>
+                </div>
+              </div>
+
+              <div class="reminder-actions">
+                <button type="button" class="btn-nav-primary" style="flex:1" data-open-prayer="${reviewPrayer.id}">
+                  ${reviewedToday ? "✓ Baca Kembali" : "Tinjau Hafalan"}
+                </button>
+                <button type="button" class="btn-outline" data-toggle-reminder-config="1">
+                  Atur ${state.reminderConfigOpen ? "▴" : "▾"}
+                </button>
+              </div>
+            </div>
+
+            ${state.reminderConfigOpen ? `
+              <div class="reminder-config">
+                <div>
+                  <p class="setting-label">Jadwal Pengingat Harian</p>
+                  <div style="display:flex;gap:8px">
+                    <button type="button" class="btn-outline ${state.reminder.enabled ? "active-soft" : ""}" style="flex:1" data-toggle-reminder-enabled="1">
+                      ${state.reminder.enabled ? "Aktif" : "Nonaktif"}
+                    </button>
+                    <input id="reminderTimeInput" type="time" class="time-input tabular" value="${state.reminder.time}" ${state.reminder.enabled ? "" : "disabled"} aria-label="Jam pengingat harian" />
+                  </div>
+                </div>
+
+                <div>
+                  <p class="setting-label">Pilihan Doa Tinjauan</p>
+                  <div class="segmented-3">
+                    ${focusOpts.map((o) => `
+                      <button type="button" class="seg-btn ${state.reminder.focus === o.id ? "active" : ""}" data-reminder-focus="${o.id}">${o.label}</button>
+                    `).join("")}
+                  </div>
+                </div>
+
+                <div>
+                  <p class="setting-label">Notifikasi Perangkat</p>
+                  <div style="display:flex;gap:8px">
+                    ${state.notifPerm !== "unsupported" ? `
+                      <button type="button" class="btn-outline" style="flex:1" data-req-notif="1" ${state.notifPerm === "granted" ? "disabled" : ""}>
+                        ${state.notifPerm === "granted" ? "Notifikasi Diizinkan" : state.notifPerm === "denied" ? "Izin Ditolak" : "Izinkan Notifikasi"}
+                      </button>
+                    ` : `<span class="stage-meta" style="flex:1;align-self:center">Pengingat dalam aplikasi aktif</span>`}
+                    <button type="button" class="btn-gold-soft" data-test-reminder="1">Uji Pengingat</button>
+                  </div>
+                </div>
+              </div>
+            ` : ""}
+          </div>
+        </section>
+      `;
+    }
+
+    function renderHome() {
+      const doneCount = PRAYERS.filter((p) => state.done[p.id]).length;
+      const pct = Math.round((doneCount / PRAYERS.length) * 100);
+      const next = PRAYERS.find((p) => !state.done[p.id]);
+      const favList = PRAYERS.filter((p) => state.fav[p.id]);
+
+      return `
+        <div class="stack-lg">
+          ${renderReminderSection()}
+
+          <section class="hero-split">
+            <div class="hero-card">
+              <svg class="hero-pattern" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="0.8">
+                <path d="M60 0 120 60 60 120 0 60Z"/><rect x="30" y="30" width="60" height="60"/><circle cx="60" cy="60" r="18"/>
+              </svg>
+              <div>
+                <p class="font-arabic hero-ar" dir="rtl" lang="ar">لَبَّيْكَ اللَّهُمَّ عُمْرَةً</p>
+                <h1 class="hero-title">Panduan Doa Umrah</h1>
+                <p class="hero-sub">Bacaan doa ringkas dan terstruktur dari keberangkatan hingga tahallul.</p>
+              </div>
+              <div class="hero-progress">
+                <div class="progress-row">
+                  <span>Progres bacaan umrah</span>
+                  <span class="tabular">${doneCount} / ${PRAYERS.length} selesai (${pct}%)</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+              </div>
+            </div>
+
+            <div class="hero-side">
+              ${next ? `
+                <button type="button" class="card resume-card" data-open-prayer="${next.id}">
+                  <div class="resume-top">
+                    <div>
+                      <p class="kicker">Lanjutkan bacaan · ${next.stage}</p>
+                      <h2 class="resume-title">${next.title}</h2>
+                      <p class="resume-desc">${next.meaning}</p>
+                    </div>
+                    <span class="icon-tile">${stageSvg(next.stageId)}</span>
+                  </div>
+                  <div class="resume-foot"><span>Buka bacaan doa</span>${chevronSvg}</div>
+                </button>
+              ` : `
+                <div class="card resume-card">
+                  <div>
+                    <p class="kicker">Alhamdulillah</p>
+                    <h2 class="resume-title">Semua Doa Selesai</h2>
+                    <p class="resume-desc">Semoga Allah menerima amal ibadah umrah Anda.</p>
+                  </div>
+                  <button type="button" class="btn-nav-primary" style="margin-top:16px" data-open-prayer="0">Baca Ulang dari Awal</button>
+                </div>
+              `}
+
+              <div class="quick-pair">
+                <button type="button" class="quick-btn" data-open-tab="counter">
+                  <span class="icon-tile gold">
+                    <svg viewBox="0 0 24 24" class="ico-md" fill="none" stroke="currentColor" stroke-width="1.85"><circle cx="12" cy="10" r="6.5" stroke-dasharray="0.1 4.2" stroke-width="2.6"/><path d="M12 16.5v4.5"/></svg>
+                  </span>
+                  <span><strong class="quick-title">Penghitung</strong><span class="quick-sub">Thawaf & Sa’i</span></span>
+                </button>
+                <button type="button" class="quick-btn" data-open-tab="favorites">
+                  <span class="icon-tile gold">${bookmarkSvg(false)}</span>
+                  <span><strong class="quick-title">Favorit</strong><span class="quick-sub tabular">${favList.length} doa ditandai</span></span>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          ${favList.length ? `
+            <section>
+              <div class="sec-head">
+                <h2 class="sec-title">Doa yang Sering Dibaca</h2>
+                <button type="button" class="sec-link" data-open-tab="favorites">Lihat semua (${favList.length})</button>
+              </div>
+              <div class="grid-cards cols-3">
+                ${favList.slice(0, 3).map((p) => `
+                  <button type="button" class="stage-card" data-open-prayer="${p.id}">
+                    <span class="icon-tile gold-filled">${bookmarkSvg(true)}</span>
+                    <span class="stage-body">
+                      <span class="stage-meta">${p.stage}</span>
+                      <strong class="stage-name" style="display:block">${p.title}</strong>
+                    </span>
+                    ${chevronSvg}
+                  </button>
+                `).join("")}
+              </div>
+            </section>
+          ` : ""}
+
+          <section>
+            <div class="sec-head">
+              <h2 class="sec-title">Tahapan Manasik Umrah</h2>
+              <span class="sec-meta">6 rangkaian utama</span>
+            </div>
+            <div class="grid-cards cols-3">
+              ${STAGES.map((s) => {
+                const items = PRAYERS.filter((p) => p.stageId === s.id);
+                const done = items.filter((p) => state.done[p.id]).length;
+                return `
+                  <button type="button" class="stage-card ${done === items.length ? "done" : ""}" data-open-stage="${s.id}">
+                    <span class="icon-tile">${stageSvg(s.id)}</span>
+                    <span class="stage-body">
+                      <span class="stage-meta tabular"><strong>0${s.order}</strong> · ${done}/${items.length} selesai</span>
+                      <strong class="stage-name" style="display:block">${s.name}</strong>
+                      <span class="stage-sub" style="display:block">${s.sub}</span>
+                    </span>
+                    ${chevronSvg}
+                  </button>
+                `;
+              }).join("")}
+            </div>
+          </section>
+
+          <p class="footer-disc">Doa disusun ringkas sesuai tuntunan utama. Untuk bacaan tambahan dan tata cara khusus, ikuti arahan pembimbing manasik Anda.</p>
+        </div>
+      `;
+    }
+
+    function getFilteredPrayers() {
+      const q = state.query.trim().toLowerCase();
+      return PRAYERS.filter((p) => {
+        if (state.tab === "favorites" && !state.fav[p.id]) return false;
+        if (state.tab === "prayers" && state.stage !== "all" && p.stageId !== state.stage) return false;
+        if (!q) return true;
+        return [p.title, p.stage, p.latin, p.meaning].some((t) => t.toLowerCase().includes(q));
+      });
+    }
+
+    function renderPrayerCardsMarkup() {
+      const list = getFilteredPrayers();
+      if (!list.length) {
+        return `
+          <div class="card empty-state">
+            <p style="font-weight:700;font-size:16px">${state.tab === "favorites" && !state.query ? "Belum ada doa favorit" : "Doa tidak ditemukan"}</p>
+            <p class="page-sub" style="margin:6px auto 14px;max-width:340px">
+              ${state.tab === "favorites" && !state.query ? "Ketuk ikon penanda di daftar doa atau halaman bacaan untuk menyimpannya di sini." : "Coba kata kunci lain atau pilih filter semua."}
+            </p>
+            ${state.tab === "favorites" && !state.query ? `<button type="button" class="btn-nav-primary" style="margin:0 auto" data-open-tab="prayers">Pilih Doa Sekarang</button>` : ""}
+          </div>
+        `;
+      }
+
+      return `<div class="grid-cards">${list.map((p) => {
+        const isDone = Boolean(state.done[p.id]);
+        const isFav = Boolean(state.fav[p.id]);
+        return `
+          <div class="prayer-row">
+            <button type="button" class="prayer-row-main" data-open-prayer="${p.id}">
+              <span class="num-badge tabular ${isDone ? "done" : ""}">${isDone ? "✓" : p.id + 1}</span>
+              <span class="stage-body">
+                <span class="stage-meta">${p.stage}${isDone ? " · Selesai" : ""}</span>
+                <strong class="stage-name" style="display:block">${p.title}</strong>
+              </span>
+            </button>
+            <button type="button" class="fav-toggle ${isFav ? "active" : ""}" data-toggle-fav="${p.id}" aria-pressed="${isFav}" aria-label="${isFav ? "Hapus dari favorit" : "Tandai favorit"}">
+              ${bookmarkSvg(isFav)}
+            </button>
+            <button type="button" class="icon-btn" data-open-prayer="${p.id}" aria-label="Buka ${p.title}">${chevronSvg}</button>
+          </div>
+        `;
+      }).join("")}</div>`;
+    }
+
+    function renderListPage() {
+      const isFavTab = state.tab === "favorites";
+      const stg = STAGES.find((s) => s.id === state.stage);
+      const favTotal = PRAYERS.filter((p) => state.fav[p.id]).length;
+
+      return `
+        <div class="stack-md">
+          <div class="list-header">
+            <div>
+              <h1 class="page-title">${isFavTab ? "Doa Favorit" : stg ? `Tahap ${stg.order}: ${stg.name}` : "Daftar Lengkap Doa Umrah"}</h1>
+              <p class="page-sub">${isFavTab ? (favTotal ? `${favTotal} doa ditandai untuk akses cepat.` : "Tandai doa yang sering dibaca agar mudah dibuka kembali.") : stg ? stg.sub : `${PRAYERS.length} bacaan doa berurutan dari keberangkatan hingga tahallul.`}</p>
+            </div>
+            <div class="search-wrap">
+              <svg viewBox="0 0 24 24" class="ico-sm" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              <input id="searchInput" class="search-input" type="search" value="${state.query.replace(/"/g, "&quot;")}" placeholder="${isFavTab ? "Cari di doa favorit..." : "Cari judul atau arti doa..."}" />
+            </div>
+          </div>
+
+          ${!isFavTab ? `
+            <div class="filter-tabs" role="tablist">
+              <button type="button" class="filter-btn ${state.stage === "all" ? "active" : ""}" data-select-stage="all">Semua</button>
+              ${STAGES.map((s) => `<button type="button" class="filter-btn ${state.stage === s.id ? "active" : ""}" data-select-stage="${s.id}">${s.short}</button>`).join("")}
+            </div>
+          ` : ""}
+
+          <div id="prayerListContainer">${renderPrayerCardsMarkup()}</div>
+        </div>
+      `;
+    }
+
+    function renderDetail() {
+      const p = PRAYERS.find((x) => x.id === state.prayerId);
+      if (!p) return "";
+      const isFav = Boolean(state.fav[p.id]);
+      const isDone = Boolean(state.done[p.id]);
+
+      return `
+        <div class="detail-wrap">
+          <div class="detail-top">
+            <div style="display:flex;align-items:center;gap:12px">
+              <button type="button" class="pill-btn" data-back-detail="1">‹ Kembali</button>
+              <span class="stage-meta tabular">${p.stage} · Doa ${p.id + 1} dari ${PRAYERS.length}</span>
+            </div>
+            <div class="detail-actions">
+              <button type="button" class="pill-btn" data-copy-prayer="${p.id}">Salin</button>
+              <button type="button" class="pill-btn ${isFav ? "active-gold" : ""}" data-toggle-fav="${p.id}">${bookmarkSvg(isFav)} <span>${isFav ? "Ditandai" : "Favorit"}</span></button>
+              <button type="button" class="pill-btn ${isDone ? "active-green" : ""}" data-toggle-done="${p.id}">✓ ${isDone ? "Selesai" : "Tandai Selesai"}</button>
+            </div>
+          </div>
+
+          <h1 class="page-title">${p.title}</h1>
+
+          <div class="arabic-card">
+            <p class="font-arabic arabic-text" dir="rtl" lang="ar" style="font-size:${state.arabicSize}px">${p.arabic}</p>
+          </div>
+
+          ${state.showLatin ? `<div class="card"><p class="read-label gold">Bacaan Latin</p><p class="latin-text">${p.latin}</p></div>` : ""}
+          ${state.showMeaning ? `<div class="card"><p class="read-label">Artinya</p><p class="meaning-text">“${p.meaning}”</p></div>` : ""}
+          ${p.note ? `<div class="note-card"><p class="read-label gold">Adab & Tata Cara</p><p class="meaning-text">${p.note}</p></div>` : ""}
+
+          <div class="detail-nav-bar">
+            <div class="detail-nav-inner">
+              <button type="button" class="btn-nav-secondary" ${p.id === 0 ? "disabled" : ""} data-open-prayer="${p.id - 1}">‹ Sebelumnya</button>
+              <button type="button" class="btn-nav-primary" ${p.id === PRAYERS.length - 1 ? "disabled" : ""} data-open-prayer="${p.id + 1}">Berikutnya ›</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderCounter() {
+      const m = state.counterMode;
+      const count = state.counts[m];
+      const isDone = m !== "tasbih" && count >= 7;
+      const pct = m === "tasbih" ? ((count % 33 || (count > 0 ? 33 : 0)) / 33) : count / 7;
+      const r = 84;
+      const c = 2 * Math.PI * r;
+
+      let guideTitle = "";
+      let guideDesc = "";
+      if (m === "thawaf") {
+        guideTitle = isDone ? "Alhamdulillah, 7 Putaran Thawaf Selesai" : count === 0 ? "Mulai sejajar Hajar Aswad (Putaran ke-1)" : `Sedang di Putaran ke-${Math.min(count + 1, 7)}`;
+        guideDesc = isDone ? "Lanjutkan shalat sunnah 2 rakaat di belakang Maqam Ibrahim." : "Ka’bah berada di sebelah kiri Anda.";
+      } else if (m === "sai") {
+        const next = count + 1;
+        guideTitle = count === 0 ? "Mulai dari Bukit Safa menuju Marwah" : isDone ? "Selesai di Bukit Marwah (7 lintasan)" : next % 2 === 1 ? `Lintasan ke-${next}: Safa → Marwah` : `Lintasan ke-${next}: Marwah → Safa`;
+        guideDesc = isDone ? "Lanjutkan dengan tahallul (memotong rambut)." : "Disunnahkan berlari kecil di antara dua lampu hijau (bagi pria).";
+      } else {
+        guideTitle = count === 0 ? "Ketuk lingkaran untuk berdzikir" : `Total dzikir: ${count} kali`;
+        guideDesc = "Dapat digunakan untuk Subhanallah, Alhamdulillah, Allahu Akbar, atau Talbiyah.";
+      }
+
+      return `
+        <div class="counter-wrap">
+          <div>
+            <h1 class="page-title">Penghitung Putaran & Dzikir</h1>
+            <p class="page-sub">Bantu jaga hitungan selama Thawaf, Sa’i, dan dzikir harian Anda.</p>
+          </div>
+
+          <div class="segmented-3" role="tablist">
+            <button type="button" class="seg-btn ${m === "thawaf" ? "active" : ""}" data-counter-mode="thawaf">Thawaf</button>
+            <button type="button" class="seg-btn ${m === "sai" ? "active" : ""}" data-counter-mode="sai">Sa’i</button>
+            <button type="button" class="seg-btn ${m === "tasbih" ? "active" : ""}" data-counter-mode="tasbih">Tasbih</button>
+          </div>
+
+          <div class="counter-card">
+            <button type="button" class="ring-btn" data-counter-delta="1" ${isDone ? "disabled" : ""} aria-label="Tambah hitungan">
+              <svg viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="${r}" fill="none" stroke="var(--surface-soft)" stroke-width="10" />
+                <circle cx="100" cy="100" r="${r}" fill="none" stroke="var(--accent)" stroke-width="10" stroke-linecap="round" stroke-dasharray="${c}" stroke-dashoffset="${c * (1 - pct)}" />
+              </svg>
+              <span class="ring-center">
+                <span class="ring-num tabular">${count}</span>
+                <span class="ring-sub tabular">${m === "tasbih" ? `Putaran ke-${Math.floor(count / 33) + 1}` : "dari 7 putaran"}</span>
+              </span>
+            </button>
+
+            <p style="font-weight:700;font-size:15px;margin-top:16px">${guideTitle}</p>
+            <p class="page-sub" style="max-width:380px">${guideDesc}</p>
+
+            <div class="counter-controls">
+              <button type="button" class="ctrl-sq" data-counter-delta="-1" ${count === 0 ? "disabled" : ""}>−</button>
+              <button type="button" class="ctrl-main" data-counter-delta="1" ${isDone ? "disabled" : ""}>${isDone ? "7 Putaran Selesai" : m === "tasbih" ? "+ Tambah Dzikir" : "+ Selesai 1 Putaran"}</button>
+              <button type="button" class="ctrl-sq" data-counter-reset="1" ${count === 0 ? "disabled" : ""} title="Reset">↺</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderModal() {
+      document.getElementById("btnThemeLight").classList.toggle("active", state.theme === "light");
+      document.getElementById("btnThemeDark").classList.toggle("active", state.theme === "dark");
+      document.getElementById("fontSizeLabel").textContent = `${state.arabicSize}px`;
+      document.getElementById("fontPreview").style.fontSize = `${Math.min(state.arabicSize, 36)}px`;
+      document.getElementById("btnToggleLatin").classList.toggle("checked", state.showLatin);
+      document.getElementById("btnToggleMeaning").classList.toggle("checked", state.showMeaning);
+
+      const doneCount = PRAYERS.filter((p) => state.done[p.id]).length;
+      const resetArea = document.getElementById("resetArea");
+      if (!doneCount) {
+        resetArea.innerHTML = "";
+      } else if (!state.confirmReset) {
+        resetArea.innerHTML = `<button type="button" id="btnAskReset" class="reset-btn">Reset Progres Bacaan (${doneCount} selesai)</button>`;
+      } else {
+        resetArea.innerHTML = `
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <button type="button" id="btnCancelReset" class="btn-nav-secondary">Batal</button>
+            <button type="button" id="btnConfirmReset" class="btn-nav-primary" style="background:var(--danger)">Ya, Reset</button>
+          </div>
+        `;
+      }
+    }
+
+    function render(scrollTop = false) {
+      updateChrome();
+      const app = document.getElementById("app");
+      if (state.prayerId !== null) app.innerHTML = renderDetail();
+      else if (state.tab === "home") app.innerHTML = renderHome();
+      else if (state.tab === "counter") app.innerHTML = renderCounter();
+      else app.innerHTML = renderListPage();
+
+      const search = document.getElementById("searchInput");
+      if (search) {
+        search.addEventListener("input", (e) => {
+          state.query = e.target.value;
+          document.getElementById("prayerListContainer").innerHTML = renderPrayerCardsMarkup();
+        });
+      }
+
+      const timeInput = document.getElementById("reminderTimeInput");
+      if (timeInput) {
+        timeInput.addEventListener("change", (e) => {
+          state.reminder.time = e.target.value || "06:00";
+          save("umrah_reminder", state.reminder);
+          render(false);
+        });
+      }
+
+      if (scrollTop) window.scrollTo(0, 0);
+    }
+
+    document.addEventListener("click", async (e) => {
+      const btn = e.target.closest("button");
+      if (!btn) return;
+
+      if (btn.dataset.tab) {
+        state.prayerId = null;
+        state.tab = btn.dataset.tab;
+        if (state.tab === "prayers") state.stage = "all";
+        render(true);
+      } else if (btn.dataset.openTab) {
+        state.prayerId = null;
+        state.tab = btn.dataset.openTab;
+        render(true);
+      } else if (btn.dataset.openStage) {
+        state.prayerId = null;
+        state.tab = "prayers";
+        state.stage = btn.dataset.openStage;
+        render(true);
+      } else if (btn.dataset.selectStage) {
+        state.stage = btn.dataset.selectStage;
+        render(false);
+      } else if (btn.dataset.openPrayer !== undefined) {
+        state.prayerId = Number(btn.dataset.openPrayer);
+        markReviewedToday();
+        render(true);
+      } else if (btn.dataset.backDetail || btn.id === "btnBackHeader") {
+        state.prayerId = null;
+        render(true);
+      } else if (btn.id === "btnHomeBrand") {
+        state.prayerId = null;
+        state.tab = "home";
+        render(true);
+      } else if (btn.dataset.toggleFav !== undefined) {
+        const id = Number(btn.dataset.toggleFav);
+        state.fav[id] = !state.fav[id];
+        save("bfav", state.fav);
+        render(false);
+      } else if (btn.dataset.toggleDone !== undefined) {
+        const id = Number(btn.dataset.toggleDone);
+        state.done[id] = !state.done[id];
+        save("bdone", state.done);
+        markReviewedToday();
+        render(false);
+      } else if (btn.dataset.copyPrayer !== undefined) {
+        const p = PRAYERS[Number(btn.dataset.copyPrayer)];
+        if (p && navigator.clipboard) {
+          navigator.clipboard.writeText(`${p.title}\n\n${p.arabic}\n\n${p.latin}\n\nArtinya: "${p.meaning}"`);
+          btn.textContent = "✓ Tersalin";
+          setTimeout(() => { btn.textContent = "Salin"; }, 1600);
+        }
+      } else if (btn.dataset.toggleReminderConfig) {
+        state.reminderConfigOpen = !state.reminderConfigOpen;
+        render(false);
+      } else if (btn.dataset.toggleReminderEnabled) {
+        state.reminder.enabled = !state.reminder.enabled;
+        save("umrah_reminder", state.reminder);
+        render(false);
+      } else if (btn.dataset.reminderFocus) {
+        state.reminder.focus = btn.dataset.reminderFocus;
+        save("umrah_reminder", state.reminder);
+        render(false);
+      } else if (btn.dataset.reqNotif) {
+        if ("Notification" in window) {
+          try { state.notifPerm = await Notification.requestPermission(); }
+          catch { state.notifPerm = "denied"; }
+        }
+        render(false);
+      } else if (btn.dataset.testReminder) {
+        state.testBannerActive = true;
+        if ("Notification" in window && Notification.permission === "granted") {
+          const p = pickDailyReviewPrayer();
+          try { new Notification("Pengingat Doa Umrah", { body: `Waktunya meninjau: ${p.title}` }); } catch {}
+        }
+        render(false);
+      } else if (btn.dataset.dismissReminder) {
+        state.testBannerActive = false;
+        state.reminder.dismissedDate = getTodayKey();
+        save("umrah_reminder", state.reminder);
+        render(false);
+      } else if (btn.dataset.counterMode) {
+        state.counterMode = btn.dataset.counterMode;
+        render(false);
+      } else if (btn.dataset.counterDelta) {
+        const m = state.counterMode;
+        const next = state.counts[m] + Number(btn.dataset.counterDelta);
+        state.counts[m] = m === "tasbih" ? Math.max(0, next) : Math.max(0, Math.min(7, next));
+        localStorage.setItem(`umrah_${m}`, String(state.counts[m]));
+        render(false);
+      } else if (btn.dataset.counterReset) {
+        const m = state.counterMode;
+        state.counts[m] = 0;
+        localStorage.setItem(`umrah_${m}`, "0");
+        render(false);
+      } else if (btn.id === "btnOpenSettings") {
+        state.confirmReset = false;
+        renderModal();
+        document.getElementById("settingsModal").classList.remove("hidden");
+      } else if (btn.id === "btnCloseModal") {
+        document.getElementById("settingsModal").classList.add("hidden");
+      } else if (btn.id === "btnThemeLight" || btn.id === "btnThemeDark") {
+        state.theme = btn.id === "btnThemeDark" ? "dark" : "light";
+        applyTheme();
+        renderModal();
+      } else if (btn.id === "btnFontMinus" || btn.id === "btnFontPlus") {
+        state.arabicSize = Math.max(24, Math.min(48, state.arabicSize + (btn.id === "btnFontPlus" ? 4 : -4)));
+        save("bfs", state.arabicSize);
+        renderModal();
+        if (state.prayerId !== null) render(false);
+      } else if (btn.id === "btnToggleLatin") {
+        state.showLatin = !state.showLatin;
+        save("umrah_latin", state.showLatin);
+        renderModal();
+        if (state.prayerId !== null) render(false);
+      } else if (btn.id === "btnToggleMeaning") {
+        state.showMeaning = !state.showMeaning;
+        save("umrah_meaning", state.showMeaning);
+        renderModal();
+        if (state.prayerId !== null) render(false);
+      } else if (btn.id === "btnAskReset") {
+        state.confirmReset = true;
+        renderModal();
+      } else if (btn.id === "btnCancelReset") {
+        state.confirmReset = false;
+        renderModal();
+      } else if (btn.id === "btnConfirmReset") {
+        state.done = {};
+        state.confirmReset = false;
+        save("bdone", {});
+        document.getElementById("settingsModal").classList.add("hidden");
+        render(false);
+      }
+    });
+
+    document.getElementById("settingsModal").addEventListener("click", (e) => {
+      if (e.target.id === "settingsModal") e.target.classList.add("hidden");
+    });
+
+    applyTheme();
+    maybeFireBrowserNotification();
+    render(true);
+
+    setInterval(() => {
+      maybeFireBrowserNotification();
+      if (state.tab === "home" && state.prayerId === null && !state.reminderConfigOpen) {
+        render(false);
+      }
+    }, 20000);
+  </script>
+</body>
+</html>
